@@ -1,18 +1,13 @@
-'use strict';
+const mqtt = require('mqtt');
+const config = require('../config/config_default');
 
-const mqtt = require('../mqtt');
+
+const client = mqtt.connect(config.consumer.host, config.consumer); //连接到服务端
+client._maxListeners = 500;
   
-// mqtt.subscribe('MQTT_COCO_TEST_SYS', { qos: 2 }, (err) => {
-//     if (err) {
-//       console.error('【mqtt.subcribe】: 订阅上报消息失败: ', JSON.stringify(err));
-//     } else {
-//         mqtt.on('message', (topic, message, packet) => {
-//             console.log(`【mqtt.subscribe】: 订阅上报消息成功: topic: ${topic}, message: ${message.toString()}, packet: ${JSON.stringify(packet)}`);
-//         });
-//         // mqtt.unsubscribe('MQTT_COCO_TEST_SYS');
-//     }
-//   });
-console.log('>>>>>>>>>>>>>>>> mqtt', mqtt);
+/**
+ * 订阅客户端消息
+ */
 
   /**
  * 订阅客户端上下线
