@@ -33,6 +33,7 @@
 //     console.log('mqtt is running...');
 // });
 
+// 测试commit与issue
 const mqtt = require('mqtt');
 const config = require('./config/config_default');
 
@@ -40,8 +41,16 @@ const config = require('./config/config_default');
 // ${YourProductKey}.iot-as-mqtt.${YourRegionId}.aliyuncs.com:1883
 const client = mqtt.connect(config.mqtt.host, config.mqtt); //连接到服务端
 
+console.log('mqtt连接', client);
 client.on('message', (msg) => {
     console.log('mqtt 连接成功')
 });
 
+client.on('close', (msg) => {
+    console.log('断开mqtt连接');
+});
+
+client.on('reconnect', (msg) => {
+    console.log('重新连接mqtt');
+});
 module.exports = client;
