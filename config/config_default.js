@@ -2,9 +2,9 @@
 
 module.exports = {
   mqtt: {
-    host: 'mqtt://post-cn-v0h128nqh0d.mqtt.aliyuncs.com',
-    username: 'Signature|LTAITwRV1Y07wisB|post-cn-v0h128nqh0d',
-    password: 'EPfzZT+z57FCsMrlkXM0I1WvJCI=',
+    host: 'mqtt://****.mqtt.aliyuncs.com',
+    username: 'Signature|****|****',
+    password: "****",
     clientId: 'GID_SERVER@@@server',
     lastBufferedRequest: JSON.stringify({ name: 'last_message' }),
     lastWillRetain: true,
@@ -19,9 +19,9 @@ module.exports = {
     }
   },
     consumer: {
-        host: 'mqtt://post-cn-v0h128nqh0d.mqtt.aliyuncs.com',
-        username: 'Signature|LTAITwRV1Y07wisB|post-cn-v0h128nqh0d',
-        password: 'ZOtaqIFRNYMbNUE1eQ14na7ELdU=',
+        host: 'mqtt://****.mqtt.aliyuncs.com',
+        username: 'Signature|******|*****',
+        password: '*******',
         clientId: 'GID_ONLINE@@@COCO_001',
         options: {
             keepalive: 60,
